@@ -109,12 +109,36 @@ def btn_start_pressed():
 def btn_exit_pressed():
   wn.bye()
 
+def paddle_a_up():
+  y = paddle_a.ycor()
+  y += 20
+  paddle_a.sety(y)
+
+def paddle_a_down():
+  y = paddle_a.ycor()
+  y -= 20
+  paddle_a.sety(y)
+
+def paddle_b_up():
+  y = paddle_b.ycor()
+  y += 20
+  paddle_b.sety(y)
+
+def paddle_b_down():
+  y = paddle_b.ycor()
+  y -= 20
+  paddle_b.sety(y)
+
 
 # Keyboard Binding
 
 wn.listen()
 wn.onkeypress(btn_start_pressed, 'Return')
 wn.onkeypress(btn_exit_pressed, 'q')
+wn.onkeypress(paddle_a_up, 'w')
+wn.onkeypress(paddle_a_down, 's')
+wn.onkeypress(paddle_b_up, 'Up')
+wn.onkeypress(paddle_b_down, 'Down')
 
 # Main Game Loop
 
