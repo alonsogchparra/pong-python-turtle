@@ -106,12 +106,15 @@ def btn_start_pressed():
   set_goal.goto(0, 250)
   set_goal.write('Reach 5 points to WIN!', align='center', font=('Courier', 10, 'normal'))
 
+def btn_exit_pressed():
+  wn.bye()
 
 
 # Keyboard Binding
 
 wn.listen()
 wn.onkeypress(btn_start_pressed, 'Return')
+wn.onkeypress(btn_exit_pressed, 'q')
 
 # Main Game Loop
 
