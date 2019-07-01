@@ -151,6 +151,28 @@ def show_winner_player_a():
   press_q.goto(0, -100)
   press_q.write('Exit (Press Q)', align='center', font=('Courier', '36', 'bold'))
 
+def show_winner_player_b():
+
+  paddle_a.color('black')
+  paddle_b.color('black')
+  ball.color('black')
+  ball.goto(0,0)
+  ball.dx = 0
+  ball.dy = 0
+  pen.clear()
+  set_goal.clear()
+
+  player_b_wins.speed(0)
+  player_b_wins.penup()
+  player_b_wins.color('white')
+  player_b_wins.hideturtle()
+  player_b_wins.goto(0,0)
+  player_b_wins.write('Player B Wins!!!', align='center', font=('Courier', '72', 'bold'))
+  press_enter.goto(0, -50)
+  press_enter.write('Restart Game (Press Enter)', align='center', font=('Courier', '36', 'bold'))
+  press_q.goto(0, -100)
+  press_q.write('Exit (Press Q)', align='center', font=('Courier', '36', 'bold'))
+
 
 # Keyboard Binding
 
@@ -224,5 +246,10 @@ while True:
 
   if score_a == 5:
     show_winner_player_a()
+    score_a = 0
+    score_b = 0
+
+  if score_b == 5:
+    show_winner_player_b()
     score_a = 0
     score_b = 0
