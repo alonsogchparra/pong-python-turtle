@@ -239,7 +239,7 @@ while True:
     ball.dx *= -1
     os.system('afplay bounce.wav&')
 
-  if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() - 40):
+  if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 50 and ball.ycor() > paddle_a.ycor() - 50):
     ball.setx(-340)
     ball.dx *= -1
     os.system('afplay bounce.wav&')
