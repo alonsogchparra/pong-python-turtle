@@ -129,6 +129,28 @@ def paddle_b_down():
   y -= 20
   paddle_b.sety(y)
 
+def show_winner_player_a():
+
+  paddle_a.color('black')
+  paddle_b.color('black')
+  ball.color('black')
+  ball.goto(0,0)
+  ball.dx = 0
+  ball.dy = 0
+  pen.clear()
+  set_goal.clear()
+
+  player_a_wins.speed(0)
+  player_a_wins.penup()
+  player_a_wins.color('white')
+  player_a_wins.hideturtle()
+  player_a_wins.goto(0,0)
+  player_a_wins.write('Player A Wins!!!', align='center', font=('Courier', '72', 'bold'))
+  press_enter.goto(0, -50)
+  press_enter.write('Restart Game (Press Enter)', align='center', font=('Courier', '36', 'bold'))
+  press_q.goto(0, -100)
+  press_q.write('Exit (Press Q)', align='center', font=('Courier', '36', 'bold'))
+
 
 # Keyboard Binding
 
@@ -199,3 +221,8 @@ while True:
     ball.setx(-340)
     ball.dx *= -1
     os.system('afplay bounce.wav&')
+
+  if score_a == 5:
+    show_winner_player_a()
+    score_a = 0
+    score_b = 0
